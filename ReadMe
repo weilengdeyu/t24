@@ -3,11 +3,139 @@ Var01  复习
   1.1 为什么有版本控制？
      解析：为了更好管理代码的版本，保证代码不丢失
 2. 版本控制工具
+   git clone xxxx.git
     svn：
     git：
     检入文件
     检出文件
+    git add
+    git commit
+    git push
 3.李纳斯自传 《Just for Fun》 仅仅为了娱乐
+-------------------------------------------
+4.集合
+  你了解哪些线程安全的集合？？？
+  解析： 单列集合：Vector
+        双列集合： HashTable  (ConcurrentHashMap)
+集合  VS   数组
+解析：数组：1.长度固定，不能自动扩容 。。。。。
+           2.中间添加元素，新数组赋值，找位置，元素后移。重复赋值。
+
+      避免类型转换，性能损耗！！！
+         装箱------》拆箱
+          装箱：：：将值类型--------》引用类型
+          拆箱：    引用类型--------》值类型
+
+ 8种基本类型：
+   int long short byte
+   char float boolean double
+   int number=5;
+
+
+   String ：java.lang：
+   存储占用内存两部分：栈和堆都有
+                     堆：真实对象
+                     栈: 真实对象引用
+   自己的方法，是一个类，类用一个关键字final修饰的类
+final：最终的，修饰类，该类不能被继承。
+
+集合框架：
+  单列：Collection（Interface）
+  1.1 ArrayList list=new ArrayList();
+
+private static final Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = {};
+private  Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = {};
+  DEFAULT:默认的
+  Capacity:容量
+  EMPTY:空的
+  ELEMENTDATA：元数据
+
+   __  __   __  __    __  __   __  __   __  __
+
+如果实例化list的时候，没有指定初始容量，JDK1.8 中 默认容量是0，但是JDK6和7默认是10。
+我们可以肯定的是扩容的时机是add调度的时候
+当集合中通过add方法踢入第一个元素的时候，容量为10（看源码）
+但是扩容的依据：其实是原有容量的1.5倍
+1.2 LinkedList
+    addFirst()
+    addLast()
+    --------------
+    removeFirst()
+    removeLast()
+    -------------
+    getFirst()
+    getLast()
+    ------------
+
+  双列
+迭代器是Iterator接口：该接口中有三个核心方法 ，维护指针可以向下移动（next），移动到指定位置后，取出当前位置的元素(next)，以及
+重置指针操作remove。
+
+------------------------------------------------------------------
+为什么数组和集合可以使用for循环进行迭代遍历？？？？
+解析：所有的数组和集合都实现了Iterable接口，Iterable接口中只有一个方法，iterator方法返回值类型是
+Iterator类型，我们将思路转到Iterator，我们发现该接口三个方法。hasNext，next和remove，最主要的是
+hasNext和next。他们在底层帮我们去维护的可以被迭代数组或者集合的迭代策略。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MD5：
+明文：我是狗，你是狗，他是狗，大家都是狗 我是狗，你是狗，他是狗，大家都是狗
+Hash函数
+密文：4a63b2cd1100538f7fcad494acaaf3f9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

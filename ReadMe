@@ -77,43 +77,45 @@ private  Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = {};
 Iterator类型，我们将思路转到Iterator，我们发现该接口三个方法。hasNext，next和remove，最主要的是
 hasNext和next。他们在底层帮我们去维护的可以被迭代数组或者集合的迭代策略。
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 MD5：
 明文：我是狗，你是狗，他是狗，大家都是狗 我是狗，你是狗，他是狗，大家都是狗
 Hash函数
 密文：4a63b2cd1100538f7fcad494acaaf3f9
+
+2019年8月29日08:52:44
+1.JavaSE（单机运作）和JavaEE（所有的重点，都放到服务器端，Web容器：Tomcat，Nginx，Jetty，JBOSS，Weblogic,IIS,Apache）
+
+2.Servlet
+设置了load-on-startup :
+优点：一旦容器启动完成，就可以秒级的提供服务
+缺点：服务器启动变长了
+
+3.HttpServlet这个抽象类中的service方法，不再进行请求的真正处理，而是担当了一个派发器的角色。
+用service方法，获取请求类型，去派发到doXXX系列的方法
+
+4.关于UML
+ 类图
+
+ 用例图
+
+
+ 时序图（序列图）
+
+
+5.Servlet生命周期
+
+
+6.Servlet编程API
+----------------------------------------------------------------------------
+7.数据库
+8.反射
+
+
+
+
+
+
+
 
 
 

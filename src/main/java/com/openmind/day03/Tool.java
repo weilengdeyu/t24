@@ -1,6 +1,7 @@
 package com.openmind.day03;
 
 import java.sql.Connection;
+import java.util.LinkedList;
 
 /**
  * @Classname Tool

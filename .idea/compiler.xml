@@ -11,6 +11,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="01QQ" target="1.7" />
+      <module name="02Servlet" target="1.5" />
       <module name="T24" target="1.5" />
     </bytecodeTargetLevel>
   </component>

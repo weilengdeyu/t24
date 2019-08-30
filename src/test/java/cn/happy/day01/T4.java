@@ -14,17 +14,13 @@ import java.util.Scanner;
  * @Created by Happy-微冷的雨
  */
 public class T4 {
-
     public static void main(String[] args) {
         @SuppressWarnings("resource")
         Scanner sc = new Scanner(System.in);
-
         System.out.println("请输入,需要进行排序的数字(格式 : 233,53,36),回车结束输入.");
         String nextLine = sc.nextLine();
-
         String[] split = nextLine.split(",");
         Integer[] temp = new Integer[split.length];
-
         int index = 0;
         try {
             for (String string : split) {
@@ -47,7 +43,5 @@ public class T4 {
         }else {
             System.out.println("升序 : " + Arrays.toString(temp));
         }
-
     }
-
 }

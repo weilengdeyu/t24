@@ -98,17 +98,107 @@ Hash函数
 
  用例图
 
-
  时序图（序列图）
-
 
 5.Servlet生命周期
 
-
 6.Servlet编程API
 ----------------------------------------------------------------------------
+2019年8月30日09:47:38
 7.数据库
+    7.1内连接：
+
+    7.2外连接：左外连接：左表所有记录===(两张表内连接的结果+以及在右表中没有匹配项但是用null值填充的行）
+
+
+   主表A left join 从表B
+
+   从表A  right join 主表B
+
+    7.3交叉连接：
+
+    7.4分组：
+
+    7.5行转列
+
+    7.6存储过程
+
+##数据库中，字段名称，表名，库名称 ，关键字不区分大小写的，记录内容区分大小写
+SELECT *  FROM Bloginfo
+WHERE blogid=6
+
+SELECT *  FROM Bloginfo
+##如果没有order by默认按照主键升序排序
+SELECT *  FROM Bloginfo
+ORDER BY blogid
+
+CREATE TABLE Student
+(
+   sid INT  AUTO_INCREMENT PRIMARY KEY NOT NULL,
+   sname VARCHAR(32)
+)
+CREATE TABLE Result
+(
+   rid INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+   sid INT,
+   score INT
+)
+SELECT sname,score
+FROM student LEFT  JOIN result
+ON student.sid=result.sid
+
+SELECT sname,score
+FROM student RIGHT  JOIN result
+ON student.sid=result.sid
+##分组查询
+##统计每个年级学生总人数
+##年级编号  总人数
+SELECT  COUNT('随便写') FROM  student
+SELECT  COUNT(1) FROM  student
+SELECT  COUNT(*) FROM  student
+
+##常量列
+SELECT *,'汉族' AS 民族 FROM student
+##一旦启用分组，select投影的列，只能有两种，分组依据本身和聚合函数
+##分组后只能获取整个小组的信息，组中成员的信息是获取
+SELECT gradeid,COUNT(1) AS 总人数
+FROM student
+GROUP BY  gradeid
+HAVING 总人数>1
+
+
+##记录总数是A表记录乘以 B表的记录
+SELECT * FROM student,result
+CREATE TABLE t1 (
+	key1 VARCHAR(10),
+	key2 VARCHAR(10),
+	VALUE INT(10)
+);
+
+INSERT INTO t1 VALUES ('a','b',1);
+INSERT INTO t1 VALUES ('a','b',2);
+INSERT INTO t1 VALUES ('a','b',3);
+INSERT INTO t1 VALUES ('c','d',1);
+INSERT INTO t1 VALUES ('c','d',2);
+INSERT INTO t1 VALUES ('c','d',3);
+
+
+SELECT * FROM t1;
+
+SELECT key1,key2,MAX(CASE VALUE WHEN 1 THEN 1 END) AS value1,
+MAX(CASE VALUE WHEN 2 THEN 2 END) AS value2,
+MAX(CASE VALUE WHEN 3 THEN 3 END) AS value3
+FROM t1
+GROUP BY key1,key2;
+
+数据库引擎：Mysql InnoDB:支持事务
+MyISAM
+
+
+
+
 8.反射
+
 
 
 
